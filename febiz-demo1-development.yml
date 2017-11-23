@@ -1,0 +1,35 @@
+ulasalle:
+  kafka:
+    productor:
+      servidor: 35.202.155.22:9092
+      topico: test
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cqrs
+    username: postgres
+    platform: POSTGRESQL
+    password: root
+  jpa:
+    hibernate:
+     ddl-auto: none
+    show-sql: true
+  data:
+    rest:
+      detection-strategy: annotated
+      base-path: /v1
+      default-page-size: 10
+      max-page-size: 100
+      page-param-name: pagina
+      sort-param-name: orden
+      limit-param-name: limite
+  redis:
+    database: 5
+    host: localhost
+    port: 6379
+    pool:
+      max-active: 5
+      max-idle: 8
+
+
+server:
+    port: 9095
